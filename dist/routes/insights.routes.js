@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const insights_controller_1 = require("../controllers/insights.controller");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+router.use(auth_1.requireAuth);
+router.get("/dashboard-summary", insights_controller_1.dashboardSummary);
+router.post("/skill-gap", insights_controller_1.skillGapAnalysis);
+router.get("/analytics", insights_controller_1.analyticsData);
+exports.default = router;
