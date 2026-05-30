@@ -20,7 +20,11 @@ export const app = express();
 
 app.use(
   cors({
-    origin: env.clientUrl,
+    origin: [
+      env.clientUrl,
+      "https://stupendous-hamster-a91124.netlify.app/login",
+      "https://develevateai.sonuprasad.com",
+    ],
     credentials: true,
   })
 );
